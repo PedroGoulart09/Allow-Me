@@ -1,12 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Remove o scroll horizontal */
+  overflow-y: auto; /* Mantém o scroll vertical */
+}
+
+.container {
+  display: flex;
+  flex: 1; /* Faz com que o container ocupe o espaço disponível */
+  justify-content: space-between; /* Espaço entre content e aside */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
+}
+
+.content-section {
+  width: 70%; /* O conteúdo ocupa 70% da largura */
+  margin: 40px;
+}
+
+.articleAside {
+  width: 20vw; /* O aside ocupa 20vw da largura */
+  height: 80vh; /* Ocupa toda a altura da janela de visualização */
+  background-color: #f5f5f5;
+  margin: 40px; /* Espaçamento semelhante ao conteúdo */
+  overflow: auto; /* Ativa o scroll caso o conteúdo ultrapasse a altura */
+  border-radius: 15px;
+}
+
+hr {
+  width: 100%; /* Para preencher toda a largura do content-section */
+  border: 1px solid #ccc;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #aeaeae;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
 .select-container {
   display: flex;
   gap: 10px;
   margin-top: 30px;
-}
-
-body {
-  margin: 0; /* Remove a margem padrão do body */
-  padding: 0; /* Remove o preenchimento padrão do body */
+  margin: 30px;
 }
 
 .custom-select {
@@ -37,43 +78,63 @@ body {
 
 .title-icons {
   display: flex;
-  justify-content: space-between; /* Garante que o título e ícones fiquem nas extremidades */
-  align-items: center; /* Alinha os itens verticalmente */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .icon {
-  margin-left: 10px; /* Espaçamento entre os ícones */
+  margin-left: 10px;
 }
 
-.content-section {
-  width: 70%;          
-  overflow: 
-  hidden; 
-  margin: 40px;
-}
-
-/* Estilos para a data e subtítulo */
 .subtitle {
-  color: #7d7c7c; /* Cinza claro */
+  color: #7d7c7c;
   line-height: 1.6;
-  word-wrap: break-word; /* Quebra palavras longas para evitar transbordamento */
-  overflow-wrap: break-word; /* Garante que palavras muito longas sejam quebradas */
-  max-width: 100%; /* Garante que o texto não exceda o tamanho do contêiner */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
-hr {
-  width: 70%;
+
+.infoLastArticle {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  border: 1px solid #adadad;
+  margin: 50px;
+}
+
+.titleLastArticle {
   margin: 40px;
-  border: 1px solid #ccc;
 }
 
-.footer {
-  display: flex; /* Use flexbox para alinhar conteúdo */
-  justify-content: start; /* Alinha horizontalmente ao centro */
-  align-items: start; /* Alinha verticalmente ao centro */
-  background-color: #aeaeae; /* Cor de fundo para o footer */
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    align-items: center; /* Centraliza o conteúdo */
+  }
+
+  .content-section {
+    width: 90%; /* O conteúdo ocupa 90% em telas menores */
+    margin: 20px 0; /* Ajusta o margin para telas menores */
+  }
+
+  .articleAside {
+    width: 90%; /* O aside ocupa 90% em telas menores */
+    height: auto; /* Altura automática em telas menores */
+    margin: 20px 0; /* Ajusta o margin para telas menores */
+  }
+
+  .footer {
+    flex-direction: column; /* Muda a direção para coluna em telas menores */
+    padding: 10px; /* Ajusta o padding para telas menores */
+  }
 }
 
-.footer img {
-  max-width: 100%; /* Garante que a imagem não exceda a largura do footer */
-  height: auto; /* Mantém a proporção da imagem */
+@media (max-width: 768px) {
+  .select-container {
+    flex-direction: column; /* Muda a direção em telas menores */
+    margin: 20px; /* Ajusta o margin para telas menores */
+  }
 }

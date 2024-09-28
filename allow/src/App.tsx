@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import LastArticles from './components/LastArticles';
 
 function App() {
   return (
     <>
-      <header>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuwAjENpDBsnhb91rzlQxF39KqlCZxHqHVig&s" alt="" style={{ width: '80px' }} />
-      </header>
+      <Header />
 
       <div className="select-container">
         <select className="custom-select">
@@ -26,36 +26,65 @@ function App() {
         </select>
       </div>
 
-      <hr />
+      <div className="container">
+        <div className="content-section">
 
-      <Content
-        title={'Sang Lose'}
-        author={'Pedro Goulart'}
-        date={'29/03/2001'}
-        subtitle={'subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle'}
+          <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          />
+           <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          />
+           <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          />
+           <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          />
+           <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          /> <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          /> <hr />
+          <Content
+            title="Sang Lose"
+            author="Pedro Goulart"
+            date="29/03/2001"
+            subtitle="subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
+          />
 
-      />
+        </div>
 
-      <hr />
+        <LastArticles />
+      </div>
 
-      <Content
-        title={'Sang Lose'}
-        author={'Pedro Goulart'}
-        date={'29/03/2001'}
-        subtitle={'subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle'}
 
-      />
+      <Footer />
 
-      < hr />
-      <Content
-        title={'Sang Lose'}
-        author={'Pedro Goulart'}
-        date={'29/03/2001'}
-        subtitle={'subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle'}
-
-      />
-
-      <Footer/>
     </>
   );
 }
