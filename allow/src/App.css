@@ -1,0 +1,79 @@
+.select-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+body {
+  margin: 0; /* Remove a margem padrão do body */
+  padding: 0; /* Remove o preenchimento padrão do body */
+}
+
+.custom-select {
+  background-color: #E0F7E9;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #008B4A;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.custom-select:hover {
+  background-color: #CFF3DC;
+}
+
+.custom-select:focus {
+  box-shadow: 0 0 5px rgba(0, 139, 74, 0.5);
+}
+
+.author {
+  color: rgb(225, 81, 137);
+}
+
+.title-icons {
+  display: flex;
+  justify-content: space-between; /* Garante que o título e ícones fiquem nas extremidades */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.icon {
+  margin-left: 10px; /* Espaçamento entre os ícones */
+}
+
+.content-section {
+  width: 70%;          
+  overflow: 
+  hidden; 
+  margin: 40px;
+}
+
+/* Estilos para a data e subtítulo */
+.subtitle {
+  color: #7d7c7c; /* Cinza claro */
+  line-height: 1.6;
+  word-wrap: break-word; /* Quebra palavras longas para evitar transbordamento */
+  overflow-wrap: break-word; /* Garante que palavras muito longas sejam quebradas */
+  max-width: 100%; /* Garante que o texto não exceda o tamanho do contêiner */
+}
+hr {
+  width: 70%;
+  margin: 40px;
+  border: 1px solid #ccc;
+}
+
+.footer {
+  display: flex; /* Use flexbox para alinhar conteúdo */
+  justify-content: start; /* Alinha horizontalmente ao centro */
+  align-items: start; /* Alinha verticalmente ao centro */
+  background-color: #aeaeae; /* Cor de fundo para o footer */
+}
+
+.footer img {
+  max-width: 100%; /* Garante que a imagem não exceda a largura do footer */
+  height: auto; /* Mantém a proporção da imagem */
+}
