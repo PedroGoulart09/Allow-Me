@@ -1,6 +1,4 @@
-# Nome da Sua Aplicação
-
-Uma breve descrição da sua aplicação e seu propósito.
+# Projeto - Allow-Me
 
 ## Tecnologias
 
