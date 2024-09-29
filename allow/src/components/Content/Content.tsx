@@ -1,14 +1,7 @@
-import React from 'react'
 import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
-import '../App.css'
+import '../../App.css'
+import type { ContentArticle } from '../../interfaces';
 
-
-interface ContentArticle {
-  title: String;
-  author: String;
-  date: String;
-  subtitle: String;
-}
 
 export default function Content({ title, author, date, subtitle }: ContentArticle) {
   return (
