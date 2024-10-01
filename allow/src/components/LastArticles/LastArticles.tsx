@@ -1,19 +1,18 @@
+import { useContent } from "../../hooks/useContent";
+import { sortedArticles } from "../utils/function";
+
 export default function LastArticles() {
+  const { content } = useContent();
+
   return (
     <aside className="articleAside">
-      <h1 className='titleLastArticle'>Últimas notícias</h1>
-      <div className='infoLastArticle'>
-        <h3>Sang Lose you hours</h3>
-        <p style={{color: 'red'}}>29/03/2031</p>
-      </div>
-      <div className='infoLastArticle'>
-        <h3>Sang Lose you hours</h3>
-        <p style={{color: 'red'}}>29/03/2021</p>
-      </div>
-      <div className='infoLastArticle'>
-        <h3>Sang Lose you hours</h3>
-        <p style={{color: 'red'}}>29/03/2011</p>
-      </div>
+      <h1 className="titleLastArticle">Últimas notícias</h1>
+      {sortedArticles(content).map((article: any, index: any) => (
+        <div className="infoLastArticle" key={index}>
+          <h3>{article.title}</h3>
+          <p style={{ color: 'red' }}>{new Date(article.publicationDate).toLocaleDateString()}</p>
+        </div>
+      ))}
     </aside>
-  )
+  );
 }

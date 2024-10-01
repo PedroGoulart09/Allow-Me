@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuwAjENpDBsnhb91rzlQxF39KqlCZxHqHVig&s" alt="" style={{ width: '80px' }} />
-  </header>
-  )
+      <img src={require('../../assets/logo-allowme-news.png')} alt="Logo" className="header-logo" />
+    </header>
+  );
 }

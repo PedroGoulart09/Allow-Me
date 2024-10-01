@@ -1,25 +1,39 @@
-import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
-import '../../App.css'
+import { FaLinkedin, FaTwitter, FaLink } from 'react-icons/fa';
+import '../../App.css';
 import type { ContentArticle } from '../../interfaces';
 
-
-export default function Content({ title, author, date, subtitle }: ContentArticle) {
+export default function Content({ articles }: { articles: ContentArticle[] }) {
   return (
     <section className="content-section">
-      <div className="title-icons">
-        <h3 className="author">{author}</h3>
-        <div className="icons">
-          <FaLinkedin className="icon" />
-          <FaTwitter className="icon" />
-          <FaFacebook className="icon" />
+      {articles.map((contentArticle, index) => (
+        <div key={index} className="article">
+          <div className="title-icons">
+            <h3 className="author">{contentArticle.author}</h3>
+            <div className="icons">
+              {contentArticle.socialMedia?.linkedin && (
+                <a href={contentArticle.socialMedia.linkedin} target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin className="icon" />
+                </a>
+              )}
+              {contentArticle.socialMedia?.twitter && (
+                <a href={contentArticle.socialMedia.twitter} target="_blank" rel="noopener noreferrer">
+                  <FaTwitter className="icon" />
+                </a>
+              )}
+              {contentArticle.socialMedia?.originalPostUrl && (
+                <a href={contentArticle.socialMedia.originalPostUrl} target="_blank" rel="noopener noreferrer">
+                  <FaLink className="icon" />
+                </a>
+              )}
+            </div>
+          </div>
+          <p className="date">{contentArticle.date}</p>
+          <h1>{contentArticle.title}</h1>
+          <p className="subtitle">{contentArticle.subtitle}</p>
+          <p>{contentArticle.content}</p>
+          <hr />
         </div>
-      </div>
-
-      <p className="subtitle">{date}</p>
-      <h1>{title}</h1>
-      <p className="subtitle">
-        {subtitle}
-      </p>
+      ))}
     </section>
-  )
+  );
 }

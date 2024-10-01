@@ -2,9 +2,15 @@ import '../../App.css'
 
 export default function Footer() {
   return (
-    <footer className='footer'>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuwAjENpDBsnhb91rzlQxF39KqlCZxHqHVig&s" alt="" style={{ width: '80px' }} />
-      <p>Copyright ©️ 2023 AllowMe News. Todos os direitos reservados</p>
+    <footer>
+      <div className="footer">
+        <img 
+          src={require('../../assets/logo-allowme-news.png')} 
+          alt="Logo" 
+          className="footer-logo"
+        />
+        <p>Copyright ©️ 2023 AllowMe News. Todos os direitos reservados</p>
+      </div>
     </footer>
   )
 }

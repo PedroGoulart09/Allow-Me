@@ -5,28 +5,10 @@ import LastArticles from './LastArticles/LastArticles';
 import Footer from './Footer/Footer';
 import Content from './Content/Content';
 import Header from './Header/Header';
+import { useContent } from '../hooks/useContent';
 
 function Index() {
-  const [articles] = useState<Article[]>([
-    {
-      title: "Sang Lose",
-      author: "Pedro Goulart",
-      date: "2001-03-29",
-      subtitle: "subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle"
-    },
-    {
-      title: "Second Article",
-      author: "Author Two",
-      date: "2021-04-10",
-      subtitle: "Some interesting details about the second article."
-    },
-    {
-      title: "Third Article",
-      author: "Author Three",
-      date: "2023-07-18",
-      subtitle: "This is the third article's subtitle."
-    },
-  ]);
+  const { content, authors } = useContent();
 
   const [selectedAuthor, setSelectedAuthor] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
@@ -39,30 +21,35 @@ function Index() {
     setSortOrder(e.target.value);
   };
 
+  const selectedAuthorData = authors.find((author) => author.authorId === selectedAuthor);
+  const publicationIds = selectedAuthorData ? selectedAuthorData.publicationIds : [];
+
   const filteredArticles = selectedAuthor
-    ? articles.filter((article) => article.author === selectedAuthor)
-    : articles;
+    ? content.filter((article) => publicationIds.includes(article.publicationId))
+    : content;
 
   const sortedArticles = [...filteredArticles].sort((a, b) => {
     if (sortOrder === "asc") {
-      return new Date(a.date).getTime() - new Date(b.date).getTime();
+      return new Date(a.publicationDate).getTime() - new Date(b.publicationDate).getTime();
     } else if (sortOrder === "desc") {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
+      return new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime();
     }
     return 0;
-  });  
+  });
 
   return (
     <>
       <Header />
 
       <div className="select-container">
- 
+
         <select className="custom-select" onChange={handleAuthorFilter} value={selectedAuthor}>
           <option value="">Mostrar todos os autores</option>
-          <option value="Pedro Goulart">Pedro Goulart</option>
-          <option value="Author Two">Author Two</option>
-          <option value="Author Three">Author Three</option>
+          {Array.from(new Set(authors.map(({ authorId }) => authorId))).map((authorId) => (
+            <option key={authorId} value={authorId}>
+              {authorId}
+            </option>
+          ))}
         </select>
 
 
@@ -79,10 +66,7 @@ function Index() {
           {sortedArticles.map((article, index) => (
             <div key={index}>
               <Content
-                title={article.title}
-                author={article.author}
-                date={article.date}
-                subtitle={article.subtitle}
+                articles={content}
               />
               <hr />
             </div>

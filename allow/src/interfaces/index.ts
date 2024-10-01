@@ -1,9 +1,18 @@
+export interface SocialMedia {
+  linkedin?: string;
+  twitter?: string;
+  originalPostUrl?: string;
+}
+
 export interface ContentArticle {
   title: string;
   author: string;
   date: string;
   subtitle: string;
+  content: string;
+  socialMedia?: SocialMedia;
 }
+
 
 export interface Article {
   title: string;
