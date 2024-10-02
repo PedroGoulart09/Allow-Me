@@ -5,12 +5,12 @@ export const useContent = () => {
   const [authors, setAuthors] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('https://run.mocky.io/v3/6e82aa06-6df4-4a08-98e7-052e0230aec4')
+    fetch('https://run.mocky.io/v3/297932b2-1303-4136-bbd1-cb20875bf87c')
       .then(response => response.json())
       .then(data => setContent(data))
       .catch(error => console.error('Erro ao buscar publicações:', error));
 
-  fetch('https://run.mocky.io/v3/19af9f60-b590-46af-8c89-801f2dbbcf9f')
+  fetch('https://run.mocky.io/v3/7342bcfd-4fe6-470e-a6df-610afebf9b65')
       .then(response => response.json())
       .then(data => setAuthors(data.authorPublications))
       .catch(error => console.error('Erro ao buscar autores:', error));

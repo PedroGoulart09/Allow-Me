@@ -14,16 +14,17 @@ body {
 }
 
 .content-section {
-  width: 70%;
+  flex: 1;
   margin: 40px;
 }
 
 .articleAside {
-  width: 20vw;
-  height: 100vh;
+  width: 25%;
+  max-width: 300px;
+  height: 70vh;
   background-color: #F4F4FA;
-  margin: 40px;
-  overflow: hidden;
+  margin: 20px;
+  padding: 20px;
   border-radius: 15px;
 }
 
@@ -41,24 +42,24 @@ hr {
   height: 80px;
 }
 
-.footer-logo {
+
+.header-logo {
   width: 80px;
+  margin: 20px;
+}
+
+.footer-logo {
   filter: grayscale(100%);
+  width: 80px;
 }
 
 .footer p {
   margin: 0;
 }
 
-.header-logo {
-  width: 80px;
-  margin: 30px;
-}
-
 .select-container {
   display: flex;
   gap: 10px;
-  margin-top: 30px;
   margin: 30px;
 }
 
@@ -108,18 +109,17 @@ hr {
 
 .infoLastArticle {
   display: flex;
-  justify-content: start;
   flex-direction: column;
   align-items: start;
   text-align: start;
   border: 1px solid #c4c3c3;
-  margin: 50px;
+  margin: 10px 0;
   border-radius: 5px;
   padding: 10px;
 }
 
 .titleLastArticle {
-  margin: 40px;
+  margin: 0;
   color: #18191E;
 }
 
@@ -127,6 +127,12 @@ hr {
   .container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .articleAside {
+    width: 40%;
+    margin: 10px 0;
+    height: 50vh;
   }
 
   .content-section {
@@ -141,9 +147,10 @@ hr {
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
+  .articleAside {
+    width: 100%;
+    margin: 0;
+    height: 50vh;
   }
 
   .content-section {
@@ -152,7 +159,7 @@ hr {
   }
 
   .infoLastArticle {
-    margin: 20px;
+    margin: 10px 0;
   }
 
   .select-container {
@@ -166,11 +173,6 @@ hr {
 }
 
 @media (max-width: 480px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .content-section {
     width: 100%;
     margin: 10px 0;

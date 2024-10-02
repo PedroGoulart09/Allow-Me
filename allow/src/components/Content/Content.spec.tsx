@@ -7,7 +7,7 @@ describe('Content Component', () => {
     {
       title: 'Test Title',
       author: 'Test Author',
-      date: '2023-01-01',
+      publicationDate: '2023-01-01',
       subtitle: 'This is a subtitle',
       content: 'This is the content of the article',
     },

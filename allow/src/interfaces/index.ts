@@ -7,7 +7,7 @@ export interface SocialMedia {
 export interface ContentArticle {
   title: string;
   author: string;
-  date: string;
+  publicationDate: string;
   subtitle: string;
   content: string;
   socialMedia?: SocialMedia;

@@ -9,6 +9,7 @@ import { useContent } from '../hooks/useContent';
 
 function Index() {
   const { content, authors } = useContent();
+  
 
   const [selectedAuthor, setSelectedAuthor] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
@@ -63,14 +64,14 @@ function Index() {
       <div className="container">
         <div className="content-section">
           <hr />
-          {sortedArticles.map((article, index) => (
-            <div key={index}>
+         
+            <div >
               <Content
-                articles={content}
+                articles={sortedArticles}
               />
-              <hr />
+           
             </div>
-          ))}
+       
         </div>
 
         <LastArticles />

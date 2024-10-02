@@ -3,6 +3,8 @@ import '../../App.css';
 import type { ContentArticle } from '../../interfaces';
 
 export default function Content({ articles }: { articles: ContentArticle[] }) {
+
+  
   return (
     <section className="content-section">
       {articles.map((contentArticle, index) => (
@@ -27,7 +29,7 @@ export default function Content({ articles }: { articles: ContentArticle[] }) {
               )}
             </div>
           </div>
-          <p className="date">{contentArticle.date}</p>
+          <p className="date">{contentArticle.publicationDate}</p>
           <h1>{contentArticle.title}</h1>
           <p className="subtitle">{contentArticle.subtitle}</p>
           <p>{contentArticle.content}</p>
