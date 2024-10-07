@@ -43,7 +43,6 @@ function Index() {
       <Header />
 
       <div className="select-container">
-
         <select className="custom-select" onChange={handleAuthorFilter} value={selectedAuthor}>
           <option value="">Mostrar todos os autores</option>
           {Array.from(new Set(authors.map(({ authorId }) => authorId))).map((authorId) => (
@@ -64,19 +63,15 @@ function Index() {
       <div className="container">
         <div className="content-section">
           <hr />
-         
             <div >
               <Content
                 articles={sortedArticles}
               />
            
             </div>
-       
         </div>
-
         <LastArticles />
       </div>
-
       <Footer />
     </>
   );

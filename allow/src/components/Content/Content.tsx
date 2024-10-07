@@ -3,8 +3,6 @@ import '../../App.css';
 import type { ContentArticle } from '../../interfaces';
 
 export default function Content({ articles }: { articles: ContentArticle[] }) {
-
-  
   return (
     <section className="content-section">
       {articles.map((contentArticle, index) => (
